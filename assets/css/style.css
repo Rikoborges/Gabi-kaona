@@ -22,7 +22,7 @@
   --creme: #fbf8f4;
   --creme2: #f3ede5;
   --texto: #2a1a3e;
-  --soft: #6b5880;
+  --soft: #4a3b5c;
   --branco: #ffffff;
 }
 
@@ -1573,13 +1573,18 @@ blockquote {
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: opacity .3s, transform .3s, background .2s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s,
+    background 0.2s;
   z-index: 998;
-  box-shadow: 0 4px 16px rgba(123,79,166,.4);
+  box-shadow: 0 4px 16px rgba(123, 79, 166, 0.4);
 }
 .back-top.visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-.back-top:hover { background: var(--roxo-esc); }
+.back-top:hover {
+  background: var(--roxo-esc);
+}
