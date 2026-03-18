@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Gabi Kaoana | Brigadeiros Artesanais em Curitiba</title>
+  <meta name="description" content="Brigadeiros artesanais, brownies e pipoca gourmet em Curitiba. Tradicionais, Especiais e Gourmet. Encomendas para festas e eventos. Peça pelo WhatsApp!">
+  <meta name="keywords" content="brigadeiros curitiba, brigadeiro gourmet curitiba, encomenda brigadeiro curitiba, confeitaria artesanal curitiba, brownie curitiba, pipoca gourmet curitiba, doces para festa curitiba">
+  <meta name="author" content="Gabi Kaoana Confeitaria Artesanal">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="canonical" href="https://gabikaoana.com.br">
+  
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gabi Kaoana | Brigadeiros Artesanais em Curitiba">
+  <meta property="og:description" content="Brigadeiros feitos com amor. Tradicionais, Especiais e Gourmet. Encomendas para festas em Curitiba.">
+  <meta property="og:image" content="https://gabikaoana.com.br/assets/images/og-preview.jpg">
+  <meta property="og:url" content="https://gabikaoana.com.br">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Gabi Kaoana Confeitaria Artesanal">
+  <meta property="og:image" content=".../og-preview.jpg">
+
+  <!-- Geo tags -->
+  <meta name="geo.region" content="BR-PR">
+  <meta name="geo.placename" content="Curitiba">
+  <meta name="geo.position" content="-25.4284;-49.2733">
+  <meta name="ICBM" content="-25.4284, -49.2733">
+
+  <!-- Schema LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Gabi Kaoana Confeitaria Artesanal",
+    "description": "Brigadeiros artesanais, brownies e pipoca gourmet em Curitiba.",
+    "url": "https://gabikaoana.com.br",
+    "telephone": "+5541997529779",
+    "priceRange": "$$",
+    "servesCuisine": ["Confeitaria","Doces","Brigadeiros"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Curitiba",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -25.4284,
+      "longitude": -49.2733
+    },
+    "sameAs": [
+      "https://instagram.com/gabikaoana_",
+      "https://wa.me/5541997529779"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "3"
+    }
+  }
+  </script>
+
+  <!-- Schema FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Com quantos dias devo pedir os brigadeiros?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mínimo de 7 dias de antecedência."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual o mínimo para eventos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mínimo de 20 unidades para eventos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais formas de pagamento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pix, débito, crédito (taxa 5%) e dinheiro. 50% de sinal para confirmar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quantos sabores por cento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Até 4 sabores por cento e 2 sabores no meio cento."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- O <style> que já tinhas continua aqui embaixo, não mexe -->
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 100svh;
+      background:
+  linear-gradient(155deg, rgba(74,37,112,.95) 0%, rgba(123,79,166,.90) 60%, rgba(139,90,182,.88) 100%),
+  url('assets/images/brig-churros-bandeja.webp') center/cover no-repeat;
+      display: grid; place-items: center;
+      text-align: center; padding: 6rem 1.5rem 3rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 25%, rgba(168,200,58,.14), transparent 55%),
+        radial-gradient(ellipse at 85% 70%, rgba(168,200,58,.09), transparent 50%);
+    }
+    .bubble {
+      position: absolute; border-radius: 50%;
+      background: rgba(168,200,58,.08);
+      animation: float var(--d,7s) ease-in-out infinite;
+      animation-delay: var(--dl,0s);
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+
+    .hero-content { position: relative; z-index: 1; max-width: 580px; }
+    .gk-logo { font-family:'Playfair Display',serif; font-size:3rem; font-weight:900; color:var(--branco); line-height:1; }
+    .gk-logo .g { color: var(--roxo-claro); }
+    .gk-logo .k { color: var(--verde); }
+    .gk-sub { font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-top:.2rem; margin-bottom:1.4rem; }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(168,200,58,.18); border: 1px solid rgba(168,200,58,.4);
+      color: var(--verde); font-size:.7rem; font-weight:600;
+      letter-spacing:.1em; text-transform:uppercase;
+      padding:.32rem .9rem; border-radius:100px;
+      margin-bottom:1.1rem;
+      animation: fadeUp .6s .1s ease both;
+    }
+    .hero h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.4rem,7vw,4rem);
+      color:var(--branco); line-height:1.12; margin-bottom:.8rem;
+      animation: fadeUp .6s .2s ease both;
+    }
+    .hero h1 em { font-style:italic; color:var(--verde); }
+    .hero p {
+      font-size:clamp(.9rem,2.5vw,1.05rem);
+      color:rgba(255,255,255,.72); line-height:1.8;
+      margin-bottom:1.8rem;
+      animation: fadeUp .6s .3s ease both;
+    }
+    .hero-btns { display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; animation: fadeUp .6s .4s ease both; }
+    .btn-ghost {
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:rgba(255,255,255,.1); border:1.5px solid rgba(255,255,255,.28);
+      color:var(--branco); font-weight:500; font-size:.88rem;
+      padding:.8rem 1.5rem; border-radius:100px;
+      text-decoration:none; min-height:48px;
+      transition:background .2s;
+    }
+    .btn-ghost:hover { background:rgba(255,255,255,.18); }
+    .hero-scroll {
+      position:absolute; bottom:1.8rem; left:50%; transform:translateX(-50%);
+      color:rgba(255,255,255,.3); font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
+      display:flex; flex-direction:column; align-items:center; gap:.3rem;
+    }
+    .hero-scroll::after { content:''; width:1px; height:28px; background:rgba(255,255,255,.18); animation:pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:.1} }
+
+    /* ── SOBRE ── */
+    .sobre { background:var(--branco); padding:5rem 1.5rem; }
+    .sobre-inner { max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:3rem; align-items:center; }
+    @media(min-width:680px){ .sobre-inner{ grid-template-columns:auto 1fr; } }
+    .sobre-foto-wrap { position:relative; width:200px; margin:0 auto; }
+    .sobre-foto { width:200px; height:240px; border-radius:24px 24px 60px 24px; object-fit:cover; border:4px solid var(--creme2); box-shadow:0 12px 40px rgba(123,79,166,.18); }
+    .sobre-badge { position:absolute; bottom:-12px; right:-12px; background:var(--verde); color:var(--texto); font-size:.7rem; font-weight:700; padding:.38rem .8rem; border-radius:100px; white-space:nowrap; }
+    .sobre h2 { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,2.4rem); line-height:1.2; margin-bottom:.9rem; }
+    .sobre h2 em { font-style:italic; color:var(--roxo); }
+    .sobre p { color:var(--soft); line-height:1.8; font-size:.92rem; margin-bottom:.7rem; }
+    .pills { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.1rem; }
+    .pill { background:var(--creme2); border:1px solid rgba(123,79,166,.14); color:var(--roxo); font-size:.77rem; font-weight:500; padding:.28rem .82rem; border-radius:100px; }
+
+    /* ── CARDÁPIO ── */
+    .cardapio { padding:5rem 1.5rem; background:var(--creme); }
+    .cat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.3rem; max-width:960px; margin:0 auto; }
+    .cat-card { background:var(--branco); border-radius:20px; overflow:hidden; box-shadow:0 2px 18px rgba(123,79,166,.08); transition:transform .25s,box-shadow .25s; }
+    .cat-card:hover { transform:translateY(-6px); box-shadow:0 14px 40px rgba(123,79,166,.16); }
+    .cat-top { padding:1.2rem 1.2rem .6rem; display:flex; align-items:flex-start; justify-content:space-between; gap:.4rem; }
+    .cat-name { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--roxo); }
+    .cat-badge { background:var(--verde); color:var(--texto); font-size:.7rem; font-weight:700; padding:.26rem .65rem; border-radius:100px; white-space:nowrap; flex-shrink:0; }
+    .cat-line { height:2px; margin:0 1.2rem; background:linear-gradient(to right,var(--roxo),var(--verde)); border-radius:2px; }
+    .cat-list { padding:.8rem 1.2rem 1.2rem; list-style:none; display:flex; flex-direction:column; gap:.34rem; }
+    .cat-list li { font-size:.85rem; color:var(--soft); padding-left:1rem; position:relative; }
+    .cat-list li::before { content:'✦'; position:absolute; left:0; color:var(--verde-esc); font-size:.52rem; top:.22rem; }
+
+    /* ── ADICIONAIS ── */
+    .adicionais { padding:5rem 1.5rem; background:var(--branco); }
+    .adic-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; max-width:860px; margin:0 auto; }
+    .adic-item { background:var(--creme2); border-radius:14px; padding:1rem 1.1rem; display:flex; justify-content:space-between; align-items:center; border-left:3px solid var(--roxo); }
+    .adic-nome { font-size:.88rem; font-weight:500; }
+    .adic-preco { font-size:.88rem; font-weight:700; color:var(--roxo); }
+
+    /* ── BROWNIES ── */
+    .brownies { padding:5rem 1.5rem; background:var(--creme2); }
+    .brow-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.2rem; max-width:820px; margin:0 auto; }
+    .brow-card { background:var(--branco); border-radius:18px; padding:1.3rem; position:relative; overflow:hidden; transition:transform .25s; }
+    .brow-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(to right,var(--marrom),var(--roxo)); }
+    .brow-card:hover { transform:translateY(-5px); }
+    .brow-name { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--marrom); margin-bottom:.5rem; }
+    .brow-precos { display:flex; flex-wrap:wrap; gap:.35rem; margin-bottom:.5rem; }
+    .brow-preco { background:#F5EDE3; color:var(--marrom); font-size:.76rem; font-weight:600; padding:.24rem .65rem; border-radius:100px; }
+    .brow-obs { font-size:.78rem; color:var(--soft); }
+
+    /* ── PIPOCA ── */
+    .pipoca { padding:5rem 1.5rem; background:var(--creme); }
+    .pip-inner { max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.5rem; }
+    @media(min-width:620px){ .pip-inner{ grid-template-columns:1fr 1fr; align-items:start; } }
+    .pip-sabores { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.6rem; }
+    .sabor { background:var(--creme2); border:1px solid rgba(123,79,166,.12); color:var(--soft); font-size:.8rem; font-weight:500; padding:.3rem .8rem; border-radius:100px; cursor:default; transition:background .2s,color .2s; }
+    .sabor:hover { background:var(--roxo); color:var(--branco); }
+    .pip-precos { display:grid; grid-template-columns:1fr 1fr; gap:.65rem; }
+    .pip-card { background:linear-gradient(135deg,var(--roxo-esc),var(--roxo)); border-radius:14px; padding:1.1rem 1rem; text-align:center; color:var(--branco); transition:transform .2s; }
+    .pip-card:hover { transform:translateY(-3px); }
+    .pip-peso { font-family:'Playfair Display',serif; font-size:1.45rem; color:var(--verde); }
+    .pip-val { font-size:.95rem; font-weight:600; margin-top:.18rem; }
+
+    /* ── DEPOIMENTOS ── */
+    .depoimentos { padding:5rem 1.5rem; background:var(--branco); }
+    .dep-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1.3rem; max-width:860px; margin:0 auto; }
+    .dep-card { background:var(--creme); border-radius:20px; padding:1.5rem; position:relative; }
+    .dep-stars { color:var(--verde); font-size:.95rem; margin-bottom:.7rem; }
+    .dep-text { font-family:'Playfair Display',serif; font-style:italic; font-size:.98rem; color:var(--texto); line-height:1.7; margin-bottom:1rem; }
+    .dep-autor { display:flex; align-items:center; gap:.55rem; }
+    .dep-avatar { width:34px; height:34px; border-radius:50%; background:var(--roxo); color:var(--branco); display:grid; place-items:center; font-size:.72rem; font-weight:700; flex-shrink:0; }
+    .dep-nome { font-size:.83rem; font-weight:600; }
+    .dep-via { font-size:.73rem; color:var(--soft); }
+    .dep-quote { position:absolute; top:.8rem; right:1.1rem; font-family:'Playfair Display',serif; font-size:3.2rem; color:rgba(123,79,166,.1); line-height:1; pointer-events:none; }
+
+    /* ── BLOG PREVIEW ── */
+    .blog-prev { padding:5rem 1.5rem; background:var(--creme2); }
+    .posts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1.3rem; max-width:960px; margin:0 auto 2rem; }
+    .post-card { background:var(--branco); border-radius:20px; overflow:hidden; box-shadow:0 2px 18px rgba(123,79,166,.08); transition:transform .25s; text-decoration:none; color:inherit; display:block; }
+    .post-card:hover { transform:translateY(-5px); }
+    .post-thumb { aspect-ratio:16/9; background:linear-gradient(135deg,var(--roxo-esc),var(--roxo)); display:grid; place-items:center; font-size:2.5rem; }
+    .post-body { padding:1.1rem 1.2rem 1.3rem; }
+    .post-cat { font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--roxo); margin-bottom:.4rem; }
+    .post-title { font-family:'Playfair Display',serif; font-size:1.05rem; line-height:1.35; margin-bottom:.5rem; }
+    .post-excerpt { font-size:.82rem; color:var(--soft); line-height:1.6; }
+
+    /* ── INFOS ── */
+    .infos { padding:3.5rem 1.5rem; background:var(--creme); }
+    .info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:.9rem; max-width:900px; margin:0 auto; }
+    .info-item { background:var(--branco); border-radius:13px; padding:1rem 1.2rem; display:flex; align-items:flex-start; gap:.65rem; font-size:.85rem; color:var(--soft); border-left:3px solid var(--verde); }
+    .info-icon { font-size:1.1rem; flex-shrink:0; }
+
+    /* ── CTA FINAL ── */
+    .cta-final { padding:5.5rem 1.5rem; background:linear-gradient(150deg,var(--roxo-esc) 0%,var(--roxo) 60%,#8B5AB6 100%); text-align:center; position:relative; overflow:hidden; }
+    .cta-final::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 30%,rgba(168,200,58,.14),transparent 60%); }
+    .cta-inner { position:relative; z-index:1; max-width:530px; margin:0 auto; }
+    .cta-final h2 { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3rem); color:var(--branco); line-height:1.2; margin-bottom:.7rem; }
+    .cta-final h2 em { font-style:italic; color:var(--verde); }
+    .cta-final p { color:rgba(255,255,255,.7); margin-bottom:1.8rem; font-size:.93rem; line-height:1.7; }
+    .cta-insta { display:inline-flex; align-items:center; gap:.35rem; color:rgba(255,255,255,.45); font-size:.82rem; text-decoration:none; margin-top:1rem; transition:color .2s; }
+    .cta-insta:hover { color:var(--verde); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span>G</span>abi <span>K</span>aoana</a>
+  <div class="nav-links">
+    <a href="#cardapio">Cardápio</a>
+    <a href="#depoimentos">Avaliações</a>
+    <a href="blog/index.html">Blog</a>
+    <a class="nav-cta" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site 😊" target="_blank" rel="noopener">Pedir agora</a>
+  </div>
+  <button class="nav-burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bubble" style="width:180px;height:180px;top:-50px;left:-50px;--d:8s;--dl:0s"></div>
+  <div class="bubble" style="width:100px;height:100px;bottom:12%;right:-25px;--d:6s;--dl:2s"></div>
+  <div class="bubble" style="width:60px;height:60px;bottom:22%;left:8%;--d:9s;--dl:4s"></div>
+  <div class="hero-content">
+    <div class="gk-logo"><span class="g">G</span><span class="k">K</span></div>
+    <div class="gk-sub">Confeitaria Artesanal</div>
+    <span class="hero-badge">🍫 Curitiba · Encomendas</span>
+    <h1>Doces feitos com<br><em>muito amor</em></h1>
+    <p>Brigadeiros artesanais, brownies e pipoca gourmet.<br>Para festas, eventos e momentos inesquecíveis.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site e quero fazer um pedido 😊" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.886a.5.5 0 00.611.61l6.055-1.457A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-4.994-1.368l-.358-.213-3.712.893.924-3.649-.233-.376A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        Fazer pedido
+      </a>
+      <a class="btn-ghost" href="#cardapio">Ver cardápio</a>
+    </div>
+  </div>
+  <div class="hero-scroll">scroll</div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre">
+  <div class="sobre-inner anim-scroll">
+    <div class="sobre-foto-wrap">
+      <!-- TROCAR pela foto real da Gabi -->
+      <img class="sobre-foto" src="assets/images/gabi-foto.jpg" alt="Gabi Kaoana, confeiteira artesanal em Curitiba" loading="lazy" width="200" height="240">
+      <span class="sobre-badge">🍫 Confeitaria Artesanal</span>
+    </div>
+    <div>
+      <span class="sec-tag">✦ Quem sou eu</span>
+      <h2>Sou mulher,<br><em>sou força, sou Gabi</em></h2>
+      <p>Sou mãe, esposa, empreendedora e apaixonada por confeitaria. Transformo desafios em combustível e cansaço em motivação — e coloco tudo isso dentro de cada doce que faço.</p>
+      <p>Cada brigadeiro é preparado com ingredientes selecionados, técnica e muito carinho.</p>
+      <div class="pills">
+        <span class="pill">Feito à mão</span>
+        <span class="pill">Ingredientes selecionados</span>
+        <span class="pill">Para eventos</span>
+        <span class="pill">Curitiba - PR</span>
+        <span class="pill">Desde 2022</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARDÁPIO -->
+<!-- CARDÁPIO -->
+<section class="cardapio" id="cardapio">
+  <div class="sec-header anim-scroll">
+    <span class="sec-tag">✦ Cardápio</span>
+    <h2>Brigadeiros Artesanais</h2>
+    <p>Escolha a categoria e monte o seu pedido</p>
+  </div>
+  <div class="cat-grid anim-stagger">
+
+    <div class="cat-card">
+      <div class="cat-foto">
+        <img src="assets/images/brig-tradicional-taca.webp" alt="Brigadeiros Tradicionais" loading="lazy">
+        <div class="cat-overlay">
+          <span class="cat-name">Tradicionais</span>
+          <span class="cat-badge">R$ 180 / cento</span>
+        </div>
+      </div>
+      <ul class="cat-list">
+        <li>Brigadeiro ao leite</li>
+        <li>Beijinho</li>
+        <li>Leite ninho</li>
+        <li>Dois amores</li>
+        <li>Bicho de pé</li>
+      </ul>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-foto">
+        <img src="assets/images/brig-ninho-perolas.webp" alt="Brigadeiros Especiais" loading="lazy">
+        <div class="cat-overlay">
+          <span class="cat-name">Especiais</span>
+          <span class="cat-badge">R$ 200 / cento</span>
+        </div>
+      </div>
+      <ul class="cat-list">
+        <li>Leite ninho com nutella</li>
+        <li>Surpresa de uva</li>
+        <li>Oreo</li>
+        <li>Café</li>
+        <li>Confete</li>
+        <li>Stikadinho</li>
+        <li>Temáticos (coloridos)</li>
+        <li>Churros</li>
+      </ul>
+    </div>
+
+    <div class="cat-card">
+      <div class="cat-foto">
+        <img src="assets/images/brig-tematicos-safari.webp" alt="Brigadeiros Gourmet" loading="lazy">
+        <div class="cat-overlay">
+          <span class="cat-name">Gourmet</span>
+          <span class="cat-badge">R$ 300 / cento</span>
+        </div>
+      </div>
+      <ul class="cat-list">
+        <li>Ferrero Rocher</li>
+        <li>Brigadeiro belga ao leite</li>
+        <li>Kinder Bueno</li>
+        <li>Rafaello</li>
+        <li>Laka Oreo</li>
+        <li>DARK (meio amargo)</li>
+        <li>Queijo e goiabada</li>
+        <li>Floresta negra</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADICIONAIS -->
+<section class="adicionais">
+  <div class="sec-header anim-scroll">
+    <span class="sec-tag">✦ Adicionais</span>
+    <h2>Para complementar seu pedido</h2>
+  </div>
+  <div class="adic-grid anim-stagger">
+    <div class="adic-item"><span class="adic-nome">Coxinha de morango</span><span class="adic-preco">R$ 5,00</span></div>
+    <div class="adic-item"><span class="adic-nome">Bombom de morango</span><span class="adic-preco">R$ 5,00</span></div>
+    <div class="adic-item"><span class="adic-nome">Mini brownie recheado</span><span class="adic-preco">R$ 4,50</span></div>
+    <div class="adic-item"><span class="adic-nome">Ninho com Nutella</span><span class="adic-preco">R$ 4,50</span></div>
+    <div class="adic-item"><span class="adic-nome">Brigadeiro ao Leite</span><span class="adic-preco">R$ 4,50</span></div>
+    <div class="adic-item"><span class="adic-nome">Doce de Leite</span><span class="adic-preco">R$ 4,50</span></div>
+  </div>
+</section>
+
+<!-- BROWNIES -->
+<section class="brownies">
+  <div class="brow-card">
+  <div class="brow-thumb">
+    <img src="assets/images/brownie-borboleta.webp" alt="Brownie borboleta" loading="lazy">
+  </div>
+  <div class="brow-body">
+    <div class="brow-name">Brownie para Festa</div>
+    <div class="brow-precos"><span class="brow-preco">3x3cm — R$ 4,50 unid.</span></div>
+    <div class="brow-obs">Confeitados, perfeito para lembrancinhas.</div>
+  </div>
+</div>
+</section>
+
+<!--galeria de fotos-->
+
+<section class="galeria" id="galeria">
+  <div class="sec-header anim-scroll">
+    <span class="sec-tag">✦ Galeria</span>
+    <h2>Feitos com amor</h2>
+  </div>
+  <div class="galeria-grid anim-stagger">
+    <div class="galeria-item"><img src="assets/images/brig-cha-revelacao.webp" alt="Brigadeiros chá revelação" loading="lazy"></div>
+    <div class="galeria-item"><img src="assets/images/brig-tematicos-safari.webp" alt="Brigadeiros temáticos safari" loading="lazy"></div>
+    <div class="galeria-item"><img src="assets/images/brig-tradicional-taca.webp" alt="Brigadeiros tradicionais" loading="lazy"></div>
+    <div class="galeria-item"><img src="assets/images/brig-ninho-perolas.webp" alt="Brigadeiro ninho" loading="lazy"></div>
+    <div class="galeria-item"><img src="assets/images/brig-churros-bandeja.webp" alt="Brigadeiros churros" loading="lazy"></div>
+    <div class="galeria-item"><img src="assets/images/brig-tematicos-futebol.webp" alt="Brigadeiros futebol" loading="lazy"></div>
+    <div class="galeria-item"><img src="assets/images/brig-ninho-nutella.webp" alt="Brigadeiro ninho nutella" loading="lazy"></div>
+    <div class="galeria-item"><img src="assets/images/brownie-borboleta.webp" alt="Brownie borboleta" loading="lazy"></div>
+    <div class="galeria-item"><img src="assets/images/kit-coracao.webp" alt="Kit coração" loading="lazy"></div>
+    <div class="galeria-item"><img src="assets/images/doce-festa.webp" alt="Doce de festa decorado" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- PIPOCA -->
+<section class="pipoca">
+  <div class="pip-foto">
+  <img src="assets/images/pipoca-personalizada-1.webp" alt="Pipoca gourmet personalizada" loading="lazy">
+</div>
+</section>
+
+
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <div class="sec-header anim-scroll">
+    <span class="sec-tag">✦ Avaliações</span>
+    <h2>O que dizem nossos clientes</h2>
+  </div>
+  <div class="dep-grid anim-stagger">
+    <div class="dep-card">
+      <div class="dep-quote">"</div>
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">"Top os doces em!! Tá de parabéns!! Superou as expectativas, muito showww!!"</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">MT</div>
+        <div><div class="dep-nome">@matheus_teteh</div><div class="dep-via">via WhatsApp</div></div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-quote">"</div>
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">"Não deu tempo nem de tirar foto, simplesmente maravilhoso. Minha vó amou!"</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">CL</div>
+        <div><div class="dep-nome">Cliente</div><div class="dep-via">Kit degustação</div></div>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-quote">"</div>
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">"Brigadeiros incríveis! Encomendei para o aniversário da minha filha e todos amaram."</p>
+      <div class="dep-autor">
+        <div class="dep-avatar">AN</div>
+        <div><div class="dep-nome">Ana</div><div class="dep-via">via Instagram</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="blog-prev">
+  <div class="sec-header anim-scroll">
+    <span class="sec-tag">✦ Blog</span>
+    <h2>Histórias & Receitas</h2>
+    <p>Bastidores, curiosidades e o amor por trás de cada doce</p>
+  </div>
+  <div class="posts-grid anim-stagger">
+    <a class="post-card" href="blog/historia-do-brigadeiro.html">
+      <div class="post-thumb">🍫</div>
+      <div class="post-body">
+        <div class="post-cat">História</div>
+        <div class="post-title">A história do brigadeiro: o doce mais amado do Brasil</div>
+        <div class="post-excerpt">Descubra a origem desse doce que conquistou o mundo...</div>
+      </div>
+    </a>
+    <a class="post-card" href="blog/index.html">
+      <div class="post-thumb">✨</div>
+      <div class="post-body">
+        <div class="post-cat">Dicas</div>
+        <div class="post-title">Os segredos de um brigadeiro perfeito</div>
+        <div class="post-excerpt">Ingredientes e o ponto certo que fazem toda a diferença...</div>
+      </div>
+    </a>
+    <a class="post-card" href="blog/index.html">
+      <div class="post-thumb">💜</div>
+      <div class="post-body">
+        <div class="post-cat">Bastidores</div>
+        <div class="post-title">Como tudo começou: a história da Gabi Kaoana</div>
+        <div class="post-excerpt">Mãe, empreendedora e confeiteira. Conheça a trajetória...</div>
+      </div>
+    </a>
+  </div>
+  <div style="text-align:center" class="anim-scroll">
+    <a class="btn-outline" href="blog/index.html">Ver todos os posts</a>
+  </div>
+</section>
+
+<!-- INFOS -->
+<section class="infos">
+  <div class="info-grid anim-stagger">
+    <div class="info-item"><span class="info-icon">📅</span><span>Mínimo de <strong>7 dias</strong> de antecedência</span></div>
+    <div class="info-item"><span class="info-icon">🎉</span><span>Mínimo de <strong>20 unidades</strong> para eventos</span></div>
+    <div class="info-item"><span class="info-icon">💳</span><span>Pix · Débito · Crédito (5%) · Dinheiro</span></div>
+    <div class="info-item"><span class="info-icon">🔒</span><span><strong>50% de sinal</strong> para garantir a encomenda</span></div>
+    <div class="info-item"><span class="info-icon">🫙</span><span>Forminhas em <strong>acrílico transparente</strong></span></div>
+    <div class="info-item"><span class="info-icon">🍫</span><span>Até <strong>4 sabores</strong> por cento</span></div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-inner anim-scroll">
+    <h2>Pronta para <em>adoçar</em><br>seu evento?</h2>
+    <p>Fale com a Gabi pelo WhatsApp e garanta sua encomenda.</p>
+    <a class="btn-primary" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site e quero fazer um pedido 😊" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.886a.5.5 0 00.611.61l6.055-1.457A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-4.994-1.368l-.358-.213-3.712.893.924-3.649-.233-.376A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      Pedir pelo WhatsApp
+    </a>
+    <br>
+    <a class="cta-insta" href="https://instagram.com/gabikaoana_" target="_blank" rel="noopener">📷 @gabikaoana_</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo"><span>G</span>abi <span>K</span>aoana</div>
+      <p>Confeitaria Artesanal em Curitiba</p>
+      <p>Brigadeiros, brownies e pipoca gourmet.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#depoimentos">Avaliações</a>
+      <a href="blog/index.html">Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5541997529779" target="_blank" rel="noopener">📱 (41) 99752-9779</a>
+      <a href="https://instagram.com/gabikaoana_" target="_blank" rel="noopener">📷 @gabikaoana_</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="politica-privacidade.html">Política de Privacidade</a>
+      
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Gabi Kaoana Confeitaria Artesanal · Curitiba, PR</span>
+    <span>·</span>
+    <span>Desenvolvido por <a href="https://rikodev.com.br" target="_blank" rel="noopener">Riko Dev</a></span>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <p>Usamos cookies para melhorar sua experiência. <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
+  <div class="cookie-btns">
+    <button class="btn-cookie-ok" id="cookie-ok">Aceitar</button>
+    <button class="btn-cookie-no" id="cookie-no">Recusar</button>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whats-float" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site 😊" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.886a.5.5 0 00.611.61l6.055-1.457A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.808 9.808 0 01-4.994-1.368l-.358-.213-3.712.893.924-3.649-.233-.376A9.79 9.79 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+</a>
+
+<script src="assets/js/main.js" defer></script>
+<button class="back-top" aria-label="Voltar ao topo">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+</body>
+</html>
