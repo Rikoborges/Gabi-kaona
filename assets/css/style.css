@@ -116,7 +116,7 @@ a {
 }
 .nav-links a {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 0.88rem;
+  font-size: 0.97rem;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s;
@@ -190,7 +190,7 @@ a {
 .sec-tag {
   display: inline-block;
   color: var(--roxo);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -207,7 +207,7 @@ a {
 .sec-header p {
   color: var(--soft);
   margin-top: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 .btn-primary {
@@ -273,12 +273,12 @@ a {
 .footer-col h4 {
   font-family: "Playfair Display", serif;
   color: var(--branco);
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 0.8rem;
 }
 .footer-col p,
 .footer-col a {
-  font-size: 0.83rem;
+  font-size: 0.93rem;
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   display: block;
@@ -302,7 +302,7 @@ a {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1.2rem;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.83rem;
   color: rgba(255, 255, 255, 0.3);
   max-width: 900px;
   margin: 0 auto;
@@ -475,7 +475,7 @@ a {
   color: var(--verde);
 }
 .gk-sub {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
@@ -488,7 +488,7 @@ a {
   background: rgba(168, 200, 58, 0.18);
   border: 1px solid rgba(168, 200, 58, 0.4);
   color: var(--verde);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -531,7 +531,7 @@ a {
   border: 1.5px solid rgba(255, 255, 255, 0.3);
   color: var(--branco);
   font-weight: 500;
-  font-size: 0.88rem;
+  font-size: 0.97rem;
   padding: 0.8rem 1.5rem;
   border-radius: 100px;
   text-decoration: none;
@@ -672,13 +672,13 @@ a {
 }
 .cat-name {
   font-family: "Playfair Display", serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--roxo);
 }
 .cat-badge {
   background: var(--verde);
   color: var(--texto);
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   font-weight: 700;
   padding: 0.26rem 0.65rem;
   border-radius: 100px;
@@ -699,7 +699,7 @@ a {
   gap: 0.34rem;
 }
 .cat-list li {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--soft);
   padding-left: 1rem;
   position: relative;
