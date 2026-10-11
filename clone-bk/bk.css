@@ -16,7 +16,18 @@
   --bk-ombre: 0 2px 8px rgba(42, 26, 62, 0.08);
   --bk-titre: "Playfair Display", serif;
   --bk-corps: "DM Sans", sans-serif;
+  --bk-haut-header: 68px;
+  --bk-haut-tabs: 56px;
 }
+
+/* Ancres : le titre ne passe plus sous le header + les onglets collants */
+.bk-root [id] {
+  scroll-margin-top: calc(var(--bk-haut-header) + var(--bk-haut-tabs) + 16px + env(safe-area-inset-top));
+}
+
+/* Supprime le délai de 300 ms au toucher */
+.bk-root a,
+.bk-root button { touch-action: manipulation; }
 
 /* ---------- Header : burger | logo | CTA ---------- */
 .bk-header {
@@ -85,7 +96,7 @@
   background: #fff;
   box-shadow: 0 2px 6px rgba(42, 26, 62, 0.06);
   position: sticky;
-  top: calc(68px + env(safe-area-inset-top));
+  top: calc(var(--bk-haut-header) + env(safe-area-inset-top));
   z-index: 40;
 }
 .bk-tabs::-webkit-scrollbar { display: none; }
@@ -272,6 +283,23 @@ body.bk-lock { overflow: hidden; }
   color: #f4eff8;
 }
 .bk-footer a { color: #d9cce8; }
+/* Zone tactile de 44px minimum pour les liens texte du pied de page */
+.bk-footer a:not(.bk-social a) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 8px;
+}
+.bk-footer small { font-size: 14px; }
+
+/* ---------- Mobile en paysage : les barres collantes prenaient 52 % de l'écran ---------- */
+@media (orientation: landscape) and (max-height: 500px) {
+  .bk-header { position: relative; }
+  .bk-tabs { top: env(safe-area-inset-top); }
+  .bk-root [id] { scroll-margin-top: calc(var(--bk-haut-tabs) + 16px); }
+  .bk-orderbar { padding-top: 8px; padding-bottom: calc(8px + env(safe-area-inset-bottom)); }
+  .bk-orderbar .bk-cta { min-height: 44px; }
+}
 
 /* ---------- Focus visible + mouvement réduit ---------- */
 .bk-root a:focus-visible,

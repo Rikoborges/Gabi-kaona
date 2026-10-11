@@ -2,18 +2,22 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Gabi Kaoana | Mockup layout BK</title>
   <!-- MOCKUP DE TESTE: não indexar no Google -->
   <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Brigadeiros artesanais, brownies e pipoca gourmet em Curitiba. Peça pelo WhatsApp!">
+  <!-- Connexion anticipée à Google Fonts (chargée par style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="../assets/images/favicon.png">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="bk.css">
   <style>
     /* Ajustes só do mockup */
-    .bk-root { background: var(--bk-bg); padding-bottom: 96px; } /* espaço pra barra fixa do WhatsApp */
+    .bk-root { background: var(--bk-bg); padding-bottom: calc(80px + env(safe-area-inset-bottom)); } /* espace pour la barre fixe */
     .bk-secao { max-width: 1100px; margin: 24px auto 0; padding: 0 16px; }
-    .bk-secao h2 { font-family: var(--bk-titre); font-size: 26px; color: var(--bk-texte); }
+    .bk-secao h2 { font-family: var(--bk-titre); font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem); text-wrap: balance; color: var(--bk-texte); }
     .bk-secao p { color: var(--bk-doux); font-size: 15px; }
     .bk-emoji { display: flex; align-items: center; justify-content: center; height: 100%; font-size: 48px; }
     .bk-drawer-top { display: flex; justify-content: space-between; align-items: center; }
@@ -49,27 +53,27 @@
   </div>
   <div class="bk-grid">
     <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="../assets/images/brig-tradicional-taca.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__media"><img src="img/brig-tradicional-taca-400.webp" srcset="img/brig-tradicional-taca-400.webp 400w, img/brig-tradicional-taca-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" fetchpriority="high"></div>
       <div class="bk-card__label">Tradicionais</div>
     </a>
     <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="../assets/images/brig-ninho-perolas.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__media"><img src="img/brig-ninho-perolas-400.webp" srcset="img/brig-ninho-perolas-400.webp 400w, img/brig-ninho-perolas-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" fetchpriority="high"></div>
       <div class="bk-card__label">Especiais</div>
     </a>
     <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="../assets/images/brig-tematicos-safari.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__media"><img src="img/brig-tematicos-safari-400.webp" srcset="img/brig-tematicos-safari-400.webp 400w, img/brig-tematicos-safari-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
       <div class="bk-card__label">Gourmet</div>
     </a>
     <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="../assets/images/brownie-borboleta.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__media"><img src="img/brownie-borboleta-400.webp" srcset="img/brownie-borboleta-400.webp 400w, img/brownie-borboleta-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
       <div class="bk-card__label">Brownies</div>
     </a>
     <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="../assets/images/pipoca-personalizada-1.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__media"><img src="img/pipoca-personalizada-1-400.webp" srcset="img/pipoca-personalizada-1-400.webp 400w, img/pipoca-personalizada-1-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
       <div class="bk-card__label">Pipoca</div>
     </a>
     <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="../assets/images/kit-coracao.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__media"><img src="img/kit-coracao-400.webp" srcset="img/kit-coracao-400.webp 400w, img/kit-coracao-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
       <div class="bk-card__label">Kits</div>
     </a>
   </div>
@@ -95,14 +99,14 @@
       </div>
     </div>
     <div class="bk-card">
-      <div class="bk-card__media"><img src="../assets/images/brownie-borboleta.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__media"><img src="img/brownie-borboleta-400.webp" srcset="img/brownie-borboleta-400.webp 400w, img/brownie-borboleta-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
       <div class="bk-card__body">
         <h3 class="bk-card__nom">Mini brownie recheado</h3>
         <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span><button class="bk-plus" aria-label="Adicionar mini brownie">+</button></div>
       </div>
     </div>
     <div class="bk-card">
-      <div class="bk-card__media"><img src="../assets/images/brig-ninho-nutella.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__media"><img src="img/brig-ninho-nutella-400.webp" srcset="img/brig-ninho-nutella-400.webp 400w, img/brig-ninho-nutella-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
       <div class="bk-card__body">
         <h3 class="bk-card__nom">Ninho com Nutella</h3>
         <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span><button class="bk-plus" aria-label="Adicionar ninho com nutella">+</button></div>
@@ -175,11 +179,22 @@
     document.body.classList.toggle('bk-lock', aberto);
     drawer.setAttribute('aria-hidden', String(!aberto));
     burger.setAttribute('aria-expanded', String(aberto));
+    // Focus : entre dans le menu à l'ouverture, revient au burger à la fermeture
+    if (aberto) drawer.querySelector('.bk-close').focus();
+    else burger.focus();
   }
+  // Garde le focus clavier piégé dans le menu ouvert
+  drawer.addEventListener('keydown', e => {
+    if (e.key !== 'Tab') return;
+    const f = drawer.querySelectorAll('a, button');
+    const premier = f[0], dernier = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === premier) { e.preventDefault(); dernier.focus(); }
+    else if (!e.shiftKey && document.activeElement === dernier) { e.preventDefault(); premier.focus(); }
+  });
   burger.addEventListener('click', () => setDrawer(true));
   document.querySelector('.bk-close').addEventListener('click', () => setDrawer(false));
   drawer.querySelectorAll('.bk-item').forEach(a => a.addEventListener('click', () => setDrawer(false)));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') setDrawer(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) setDrawer(false); });
 </script>
 </body>
 </html>
