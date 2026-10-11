@@ -1,0 +1,284 @@
+/* ==========================================================
+   bk.css — Layout inspiré de Burger King, aux couleurs de Gabi Kaoana
+   À charger APRÈS style.css. Toutes les classes sont préfixées .bk-
+   donc aucun conflit avec le CSS existant. Polices et couleurs :
+   on réutilise les variables de style.css (avec valeurs de secours).
+   ========================================================== */
+
+.bk-root {
+  --bk-bg: var(--creme, #fbf8f4);
+  --bk-card: var(--branco, #ffffff);
+  --bk-texte: var(--texto, #2a1a3e);
+  --bk-doux: var(--soft, #4a3b5c);
+  --bk-accent: var(--roxo-esc, #4a2570);
+  --bk-cta: var(--verde, #a8c83a);
+  --bk-rayon: 20px;
+  --bk-ombre: 0 2px 8px rgba(42, 26, 62, 0.08);
+  --bk-titre: "Playfair Display", serif;
+  --bk-corps: "DM Sans", sans-serif;
+}
+
+/* ---------- Header : burger | logo | CTA ---------- */
+.bk-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 12px 16px;
+  padding-top: calc(12px + env(safe-area-inset-top));
+  background: var(--bk-bg);
+}
+
+.bk-burger,
+.bk-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--bk-texte);
+  cursor: pointer;
+}
+
+.bk-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bk-accent);
+  color: var(--bk-cta);
+  font-family: var(--bk-titre);
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.bk-cta {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 14px;
+  background: var(--bk-cta);
+  color: var(--bk-texte);
+  font-family: var(--bk-corps);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+/* ---------- Onglets horizontaux (scroll) ---------- */
+.bk-tabs {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(42, 26, 62, 0.06);
+  position: sticky;
+  top: calc(68px + env(safe-area-inset-top));
+  z-index: 40;
+}
+.bk-tabs::-webkit-scrollbar { display: none; }
+
+.bk-tab {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 14px 14px 10px;
+  border-bottom: 4px solid transparent;
+  color: var(--bk-doux);
+  font-family: var(--bk-titre);
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.bk-tab.is-active {
+  color: var(--bk-accent);
+  border-bottom-color: var(--bk-accent);
+}
+
+/* ---------- Grille de catégories / produits ---------- */
+.bk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 20px 16px;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .bk-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+}
+
+.bk-card {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--bk-rayon);
+  background: var(--bk-card);
+  box-shadow: var(--bk-ombre);
+  color: var(--bk-texte);
+  text-decoration: none;
+}
+.bk-card__media {
+  aspect-ratio: 1 / 0.9; /* évite le saut de mise en page (CLS) */
+  overflow: hidden;
+  background: #efe7f6;
+}
+.bk-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.bk-card__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 8px 12px;
+  text-align: center;
+  font-family: var(--bk-titre);
+  font-weight: 700;
+  font-size: 17px;
+}
+@media (hover: hover) {
+  .bk-card:hover .bk-card__media img { transform: scale(1.06); }
+}
+
+/* Carte produit (page catégorie) : nom + prix + bouton "+" */
+.bk-card__body { padding: 12px; display: grid; gap: 8px; }
+.bk-card__nom {
+  margin: 0;
+  font-family: var(--bk-titre);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.bk-card__ligne { display: flex; align-items: center; justify-content: space-between; }
+.bk-prix { font-weight: 700; font-size: 14px; color: var(--bk-doux); }
+.bk-plus {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--bk-accent);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ---------- Drawer plein écran ---------- */
+.bk-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  height: 100dvh;
+  overflow-y: auto;
+  padding: 16px 16px calc(24px + env(safe-area-inset-bottom));
+  background: var(--bk-bg);
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0s linear 0.3s;
+}
+.bk-drawer.is-open {
+  transform: none;
+  visibility: visible;
+  transition: transform 0.3s ease;
+}
+body.bk-lock { overflow: hidden; }
+
+.bk-promo {
+  margin: 16px 0 12px;
+  padding: 22px 20px;
+  border-radius: 24px;
+  background: var(--bk-accent);
+  color: #fff;
+  display: grid;
+  gap: 14px;
+}
+.bk-promo__titre {
+  font-family: var(--bk-titre);
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.25;
+}
+.bk-promo .bk-cta { justify-self: stretch; justify-content: center; min-height: 52px; font-size: 17px; }
+
+.bk-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 68px;
+  color: var(--bk-texte);
+  font-family: var(--bk-titre);
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+.bk-item svg { flex: 0 0 auto; }
+.bk-item span { flex: 1; }
+.bk-sep { height: 1px; margin: 4px 0 8px; background: rgba(42, 26, 62, 0.15); }
+
+/* ---------- Barre de commande fixe (WhatsApp) ---------- */
+.bk-orderbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: #fff;
+  box-shadow: 0 -4px 16px rgba(42, 26, 62, 0.1);
+}
+.bk-orderbar .bk-cta {
+  display: flex;
+  justify-content: center;
+  min-height: 56px;
+  border-radius: 16px;
+  font-size: 16px;
+}
+
+/* ---------- Pied de page sombre ---------- */
+.bk-footer {
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+  padding: 40px 24px calc(32px + env(safe-area-inset-bottom));
+  background: var(--bk-texte);
+  color: #f4eff8;
+  font-family: var(--bk-corps);
+}
+.bk-social { display: flex; gap: 14px; }
+.bk-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f4eff8;
+}
+.bk-footer a { color: #d9cce8; }
+
+/* ---------- Focus visible + mouvement réduit ---------- */
+.bk-root a:focus-visible,
+.bk-root button:focus-visible {
+  outline: 3px solid var(--bk-accent);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .bk-card__media img,
+  .bk-drawer { transition: none; }
+}
