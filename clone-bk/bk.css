@@ -311,3 +311,358 @@ body.bk-lock { overflow: hidden; }
   .bk-card__media img,
   .bk-drawer { transition: none; }
 }
+
+/* ==========================================================
+   v2 — Hero compact, nav desktop, commande guidée, mouvements utiles
+   ========================================================== */
+
+/* ---------- Nav desktop (≥1024px : liens visibles, pas de burger) ---------- */
+.bk-nav { display: none; }
+@media (min-width: 1024px) {
+  .bk-header .bk-burger { display: none; }
+  .bk-nav { display: flex; gap: 4px; }
+  .bk-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: 12px;
+    color: var(--bk-texte);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .bk-nav a:hover { background: rgba(74, 37, 112, 0.08); }
+}
+
+/* ---------- Hero compact : la photo vend, mais ne cache pas le menu ---------- */
+.bk-hero {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: min(56svh, 560px);
+  margin: 0 16px;
+  overflow: hidden;
+  border-radius: 28px;
+  color: #fff;
+  isolation: isolate;
+}
+.bk-hero__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: bk-zoom 1.2s ease-out both; /* léger zoom arrière à l'arrivée */
+}
+/* Dégradé seulement en bas : la photo reste visible, le texte reste lisible */
+.bk-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(42, 26, 62, 0.92) 0%, rgba(42, 26, 62, 0.55) 45%, rgba(42, 26, 62, 0) 75%);
+}
+.bk-hero__contenu {
+  display: grid;
+  gap: 14px;
+  max-width: 560px;
+  padding: 24px 20px;
+}
+.bk-hero h1 {
+  margin: 0;
+  font-family: var(--bk-titre);
+  font-size: clamp(1.75rem, 1.3rem + 2.2vw, 3rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+.bk-hero h1 em { color: var(--bk-cta); font-style: italic; }
+.bk-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.bk-chips li {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  font-size: 14px;
+  font-weight: 600;
+}
+.bk-hero .bk-cta { justify-self: start; min-height: 52px; padding: 0 22px; font-size: 16px; }
+@media (min-width: 1024px) {
+  .bk-hero { max-width: 1100px; margin-inline: auto; min-height: 480px; }
+  .bk-hero__contenu { padding: 40px; }
+}
+@keyframes bk-zoom { from { transform: scale(1.08); } to { transform: none; } }
+
+/* ---------- Indicateur d'onglet qui glisse ---------- */
+.bk-tabs__ind {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 0;
+  border-radius: 4px 4px 0 0;
+  background: var(--bk-accent);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.bk-tabs.has-ind .bk-tab.is-active { border-bottom-color: transparent; }
+.bk-tab { transition: color 0.2s ease; }
+
+/* ---------- Badge de prix sur les cartes catégorie ---------- */
+.bk-card { position: relative; }
+.bk-card__prix {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--bk-accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+button.bk-card { width: 100%; padding: 0; border: 0; text-align: inherit; font: inherit; cursor: pointer; }
+.bk-card:active { transform: scale(0.98); }
+.bk-card { transition: transform 0.15s ease; }
+
+/* Apparition des cartes, une seule fois (classe .bk-js posée par le JS : sans JS tout reste visible) */
+.bk-js .bk-reveal { opacity: 0; transform: translateY(16px) scale(0.98); }
+.bk-js .bk-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 60ms);
+}
+
+/* ---------- Sélecteur de quantité (remplace le "+") ---------- */
+.bk-stepper { display: flex; align-items: center; gap: 4px; }
+.bk-stepper .bk-plus { width: 44px; height: 44px; }
+.bk-stepper .bk-moins {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--bk-accent);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--bk-accent);
+  font-size: 22px;
+  cursor: pointer;
+}
+.bk-qte { min-width: 2ch; text-align: center; font-weight: 700; }
+.bk-stepper:not(.has-qte) .bk-moins,
+.bk-stepper:not(.has-qte) .bk-qte { display: none; }
+
+/* ---------- Comment ça marche : étapes numérotées (pas des cartes) ---------- */
+.bk-steps {
+  counter-reset: etape;
+  display: grid;
+  gap: 18px;
+  max-width: 1100px;
+  margin: 16px auto 0;
+  padding: 0 16px;
+  list-style: none;
+}
+.bk-steps li {
+  counter-increment: etape;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.bk-steps li::before {
+  content: counter(etape);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bk-cta);
+  color: var(--bk-texte);
+  font-family: var(--bk-titre);
+  font-weight: 700;
+  font-size: 20px;
+}
+.bk-steps strong { display: block; font-family: var(--bk-titre); font-size: 18px; color: var(--bk-texte); }
+.bk-steps span { color: var(--bk-doux); font-size: 15px; }
+@media (min-width: 768px) {
+  .bk-steps { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+}
+.bk-regles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1100px;
+  margin: 20px auto 0;
+  padding: 0 16px;
+  list-style: none;
+}
+.bk-regles li {
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--bk-ombre);
+  color: var(--bk-doux);
+  font-size: 14px;
+}
+
+/* ---------- Avis : carrousel horizontal ---------- */
+.bk-avis {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(82%, 340px);
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 16px;
+  max-width: 1100px;
+  margin-inline: auto;
+  scrollbar-width: none;
+}
+.bk-avis::-webkit-scrollbar { display: none; }
+.bk-avis figure {
+  scroll-snap-align: start;
+  margin: 0;
+  padding: 20px;
+  border-radius: var(--bk-rayon);
+  background: #fff;
+  box-shadow: var(--bk-ombre);
+}
+.bk-avis blockquote { margin: 8px 0 12px; color: var(--bk-texte); font-size: 15px; }
+.bk-avis figcaption { color: var(--bk-doux); font-size: 14px; font-weight: 600; }
+.bk-etoiles { color: #c99a12; letter-spacing: 2px; }
+
+/* ---------- Mini "Sobre" ---------- */
+.bk-sobre {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 32px auto 0;
+  padding: 0 16px;
+}
+.bk-sobre img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
+.bk-sobre p { margin: 0; color: var(--bk-doux); font-size: 15px; }
+.bk-sobre strong { color: var(--bk-texte); font-family: var(--bk-titre); font-size: 18px; }
+
+/* ---------- Barre de commande : compteur + total ---------- */
+.bk-orderbar .bk-cta { gap: 10px; }
+.bk-compteur {
+  display: none;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--bk-accent);
+  color: #fff;
+  font-size: 14px;
+  line-height: 26px;
+}
+.bk-orderbar.has-items .bk-compteur { display: inline-block; }
+.bk-compteur.is-bump { animation: bk-bump 0.4s ease; }
+@keyframes bk-bump { 40% { transform: scale(1.35); } }
+@media (min-width: 1024px) {
+  /* Desktop : bouton flottant plutôt qu'une barre pleine largeur */
+  .bk-orderbar { left: auto; right: 24px; bottom: 24px; width: 380px; padding: 0; border-radius: 16px; background: none; box-shadow: 0 8px 24px rgba(42, 26, 62, 0.2); }
+}
+
+/* ---------- Bottom sheet (dialog natif) ---------- */
+.bk-sheet {
+  width: 100%;
+  max-width: 560px;
+  max-height: 88dvh;
+  margin: auto auto 0;
+  padding: 0;
+  border: 0;
+  border-radius: 24px 24px 0 0;
+  background: var(--bk-bg);
+  color: var(--bk-texte);
+}
+.bk-sheet::backdrop { background: rgba(42, 26, 62, 0.5); }
+.bk-sheet[open] { animation: bk-monte 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.bk-sheet[open]::backdrop { animation: bk-fondu 0.35s ease; }
+@media (min-width: 768px) {
+  .bk-sheet { margin: auto; border-radius: 24px; }
+}
+@keyframes bk-monte { from { transform: translateY(100%); } }
+@keyframes bk-fondu { from { opacity: 0; } }
+.bk-sheet__img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.bk-sheet__corps { display: grid; gap: 14px; padding: 20px 20px calc(20px + env(safe-area-inset-bottom)); }
+.bk-sheet__titre { margin: 0; font-family: var(--bk-titre); font-size: 24px; }
+.bk-sheet__aide { margin: 0; color: var(--bk-doux); font-size: 15px; }
+.bk-sheet .bk-close { position: absolute; top: 10px; right: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.9); }
+.bk-saveurs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; border: 0; }
+.bk-saveurs legend { margin-bottom: 8px; font-weight: 700; }
+.bk-chip input { position: absolute; opacity: 0; pointer-events: none; }
+.bk-chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 2px solid rgba(74, 37, 112, 0.25);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.bk-chip input:checked + span { border-color: var(--bk-accent); background: var(--bk-accent); color: #fff; }
+.bk-chip input:disabled + span { opacity: 0.4; cursor: not-allowed; }
+.bk-chip input:focus-visible + span { outline: 3px solid var(--bk-accent); outline-offset: 2px; }
+.bk-sheet .bk-cta { justify-self: stretch; justify-content: center; min-height: 52px; font-size: 16px; border: 0; cursor: pointer; }
+.bk-sheet .bk-cta:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ---------- Liste du panier dans la sheet ---------- */
+.bk-panier { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.bk-panier li { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(42, 26, 62, 0.1); font-size: 15px; }
+.bk-panier small { display: block; color: var(--bk-doux); }
+.bk-retirer { min-height: 44px; padding: 0 8px; border: 0; background: none; color: var(--bk-accent); font-weight: 700; cursor: pointer; }
+.bk-total { display: flex; justify-content: space-between; font-weight: 700; font-size: 18px; }
+
+/* ---------- Toast ---------- */
+.bk-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(96px + env(safe-area-inset-bottom));
+  z-index: 70;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--bk-texte);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.bk-toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Mouvement réduit : tout le v2 devient statique ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .bk-hero__img,
+  .bk-sheet[open],
+  .bk-sheet[open]::backdrop,
+  .bk-compteur.is-bump { animation: none; }
+  .bk-tabs__ind,
+  .bk-toast,
+  .bk-card,
+  .bk-js .bk-reveal.is-visible { transition: none; }
+  .bk-js .bk-reveal { opacity: 1; transform: none; }
+}
+
+/* Corrections v2 */
+.bk-orderbar .bk-cta[hidden] { display: none; } /* sinon display:flex écrase l'attribut hidden */
+span.bk-card__media { display: block; }
+/* Photo de la sheet plus basse (l'attribut height l'emportait sur aspect-ratio) */
+.bk-sheet__img { height: auto; aspect-ratio: 2 / 1; }
+/* Bouton d'action toujours visible en bas de la sheet */
+.bk-sheet__corps > .bk-cta:last-child {
+  position: sticky;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  box-shadow: 0 -12px 16px var(--bk-bg);
+}
+/* Desktop : header et onglets alignés sur la même colonne que le contenu */
+@media (min-width: 1024px) {
+  .bk-header,
+  .bk-tabs { padding-inline: max(16px, calc((100% - 1100px) / 2)); }
+}

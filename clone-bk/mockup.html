@@ -6,113 +6,217 @@
   <title>Gabi Kaoana | Mockup layout BK</title>
   <!-- MOCKUP DE TESTE: não indexar no Google -->
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Brigadeiros artesanais, brownies e pipoca gourmet em Curitiba. Peça pelo WhatsApp!">
+  <meta name="description" content="Brigadeiros artesanais, brownies e pipoca gourmet em Curitiba. Monte seu pedido e envie pelo WhatsApp!">
   <!-- Connexion anticipée à Google Fonts (chargée par style.css) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Image LCP du hero : téléchargée en priorité -->
+  <link rel="preload" as="image" href="img/hero-churros-800.webp" imagesrcset="img/hero-churros-800.webp 800w, img/hero-churros-1400.webp 1400w" imagesizes="(min-width: 1024px) 1100px, 100vw" fetchpriority="high">
   <link rel="icon" href="../assets/images/favicon.png">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="bk.css">
   <style>
     /* Ajustes só do mockup */
     .bk-root { background: var(--bk-bg); padding-bottom: calc(80px + env(safe-area-inset-bottom)); } /* espace pour la barre fixe */
-    .bk-secao { max-width: 1100px; margin: 24px auto 0; padding: 0 16px; }
+    .bk-secao { max-width: 1100px; margin: 40px auto 0; padding: 0 16px; }
     .bk-secao h2 { font-family: var(--bk-titre); font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem); text-wrap: balance; color: var(--bk-texte); }
     .bk-secao p { color: var(--bk-doux); font-size: 15px; }
     .bk-emoji { display: flex; align-items: center; justify-content: center; height: 100%; font-size: 48px; }
     .bk-drawer-top { display: flex; justify-content: space-between; align-items: center; }
+    .bk-footer { margin-top: 48px; }
   </style>
+  <script>document.documentElement.classList.add('bk-js');</script>
 </head>
 <body class="bk-root">
 
-<!-- HEADER: burger | logo | CTA -->
+<!-- HEADER: burger (mobile) ou links (desktop) | logo | CTA -->
 <header class="bk-header">
   <button class="bk-burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="bk-drawer">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
   </button>
+  <nav class="bk-nav" aria-label="Principal">
+    <a href="#cardapio">Cardápio</a>
+    <a href="#como">Como funciona</a>
+    <a href="#avaliacoes">Avaliações</a>
+    <a href="../blog/index.html">Blog</a>
+  </nav>
   <a class="bk-logo" href="index.html" aria-label="Gabi Kaoana, início">GK</a>
-  <a class="bk-cta" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site 😊" target="_blank" rel="noopener">Pedir</a>
+  <a class="bk-cta" href="#cardapio">Pedir</a>
 </header>
 
-<!-- ABAS -->
-<nav class="bk-tabs" aria-label="Categorias">
-  <a class="bk-tab is-active" href="#cardapio">Cardápio</a>
+<!-- HERO COMPACTO: foto do produto + o que o cliente quer saber -->
+<section class="bk-hero" aria-labelledby="hero-titulo">
+  <img class="bk-hero__img" src="img/hero-churros-800.webp" srcset="img/hero-churros-800.webp 800w, img/hero-churros-1400.webp 1400w" sizes="(min-width: 1024px) 1100px, 100vw" alt="Bandeja de brigadeiros de churros da Gabi Kaoana" width="1400" height="1400" fetchpriority="high">
+  <div class="bk-hero__contenu">
+    <h1 id="hero-titulo">Brigadeiros artesanais feitos com <em>muito amor</em></h1>
+    <ul class="bk-chips">
+      <li>A partir de R$ 220/cento</li>
+      <li>Encomenda com 7 dias</li>
+      <li>Curitiba</li>
+    </ul>
+    <a class="bk-cta" href="#cardapio">Montar meu pedido</a>
+  </div>
+</section>
+
+<!-- ABAS (seguem a rolagem) -->
+<nav class="bk-tabs" aria-label="Seções">
+  <a class="bk-tab is-active" href="#cardapio">Brigadeiros</a>
   <a class="bk-tab" href="#adicionais">Adicionais</a>
-  <a class="bk-tab" href="#cardapio">Tradicionais</a>
-  <a class="bk-tab" href="#cardapio">Especiais</a>
-  <a class="bk-tab" href="#cardapio">Gourmet</a>
-  <a class="bk-tab" href="#cardapio">Brownies</a>
-  <a class="bk-tab" href="#cardapio">Pipoca</a>
+  <a class="bk-tab" href="#como">Como funciona</a>
+  <a class="bk-tab" href="#avaliacoes">Avaliações</a>
+  <span class="bk-tabs__ind" aria-hidden="true"></span>
 </nav>
 
 <main>
-  <!-- GRADE DE CATEGORIAS -->
-  <div class="bk-secao" id="cardapio">
-    <h2>Cardápio</h2>
-    <p>Escolha a categoria e monte o seu pedido</p>
-  </div>
-  <div class="bk-grid">
-    <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="img/brig-tradicional-taca-400.webp" srcset="img/brig-tradicional-taca-400.webp 400w, img/brig-tradicional-taca-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" fetchpriority="high"></div>
-      <div class="bk-card__label">Tradicionais</div>
-    </a>
-    <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="img/brig-ninho-perolas-400.webp" srcset="img/brig-ninho-perolas-400.webp 400w, img/brig-ninho-perolas-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" fetchpriority="high"></div>
-      <div class="bk-card__label">Especiais</div>
-    </a>
-    <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="img/brig-tematicos-safari-400.webp" srcset="img/brig-tematicos-safari-400.webp 400w, img/brig-tematicos-safari-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
-      <div class="bk-card__label">Gourmet</div>
-    </a>
-    <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="img/brownie-borboleta-400.webp" srcset="img/brownie-borboleta-400.webp 400w, img/brownie-borboleta-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
-      <div class="bk-card__label">Brownies</div>
-    </a>
-    <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="img/pipoca-personalizada-1-400.webp" srcset="img/pipoca-personalizada-1-400.webp 400w, img/pipoca-personalizada-1-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
-      <div class="bk-card__label">Pipoca</div>
-    </a>
-    <a class="bk-card" href="#">
-      <div class="bk-card__media"><img src="img/kit-coracao-400.webp" srcset="img/kit-coracao-400.webp 400w, img/kit-coracao-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
-      <div class="bk-card__label">Kits</div>
-    </a>
-  </div>
+  <!-- CATEGORIAS: tocar abre o painel de escolha -->
+  <section id="cardapio" data-spy>
+    <div class="bk-secao">
+      <h2>Cardápio</h2>
+      <p>Toque numa categoria para escolher os sabores</p>
+    </div>
+    <div class="bk-grid">
+      <button class="bk-card bk-reveal" data-cat="tradicionais">
+        <span class="bk-card__media"><img src="img/brig-tradicional-taca-400.webp" srcset="img/brig-tradicional-taca-400.webp 400w, img/brig-tradicional-taca-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></span>
+        <span class="bk-card__prix">R$ 220/cento</span>
+        <span class="bk-card__label">Tradicionais</span>
+      </button>
+      <button class="bk-card bk-reveal" data-cat="especiais">
+        <span class="bk-card__media"><img src="img/brig-ninho-perolas-400.webp" srcset="img/brig-ninho-perolas-400.webp 400w, img/brig-ninho-perolas-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></span>
+        <span class="bk-card__prix">R$ 290/cento</span>
+        <span class="bk-card__label">Especiais</span>
+      </button>
+      <button class="bk-card bk-reveal" data-cat="gourmet">
+        <span class="bk-card__media"><img src="img/brig-tematicos-safari-400.webp" srcset="img/brig-tematicos-safari-400.webp 400w, img/brig-tematicos-safari-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></span>
+        <span class="bk-card__prix">R$ 380/cento</span>
+        <span class="bk-card__label">Gourmet</span>
+      </button>
+      <button class="bk-card bk-reveal" data-cat="brownies">
+        <span class="bk-card__media"><img src="img/brownie-borboleta-400.webp" srcset="img/brownie-borboleta-400.webp 400w, img/brownie-borboleta-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></span>
+        <span class="bk-card__prix">R$ 4,50/un.</span>
+        <span class="bk-card__label">Brownies</span>
+      </button>
+      <button class="bk-card bk-reveal" data-cat="pipoca">
+        <span class="bk-card__media"><img src="img/pipoca-personalizada-1-400.webp" srcset="img/pipoca-personalizada-1-400.webp 400w, img/pipoca-personalizada-1-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></span>
+        <span class="bk-card__prix">Sob consulta</span>
+        <span class="bk-card__label">Pipoca</span>
+      </button>
+      <button class="bk-card bk-reveal" data-cat="kits">
+        <span class="bk-card__media"><img src="img/kit-coracao-400.webp" srcset="img/kit-coracao-400.webp 400w, img/kit-coracao-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></span>
+        <span class="bk-card__prix">Sob consulta</span>
+        <span class="bk-card__label">Kits</span>
+      </button>
+    </div>
+  </section>
 
-  <!-- CARDS DE PRODUTO (nome + preço + botão +) -->
-  <div class="bk-secao" id="adicionais">
-    <h2>Adicionais</h2>
-    <p>Para complementar seu pedido</p>
-  </div>
-  <div class="bk-grid">
-    <div class="bk-card">
-      <div class="bk-card__media"><span class="bk-emoji" aria-hidden="true">🍓</span></div>
-      <div class="bk-card__body">
-        <h3 class="bk-card__nom">Coxinha de morango</h3>
-        <div class="bk-card__ligne"><span class="bk-prix">R$ 5,00</span><button class="bk-plus" aria-label="Adicionar coxinha de morango">+</button></div>
+  <!-- ADICIONAIS: − quantidade + -->
+  <section id="adicionais" data-spy>
+    <div class="bk-secao">
+      <h2>Adicionais</h2>
+      <p>Para complementar seu pedido · cada toque adiciona 10 unidades</p>
+    </div>
+    <div class="bk-grid">
+      <div class="bk-card bk-reveal">
+        <div class="bk-card__media"><span class="bk-emoji" aria-hidden="true">🍓</span></div>
+        <div class="bk-card__body">
+          <h3 class="bk-card__nom">Coxinha de morango</h3>
+          <div class="bk-card__ligne"><span class="bk-prix">R$ 5,00</span>
+            <div class="bk-stepper" data-id="coxinha" data-nome="Coxinha de morango" data-preco="5"><button class="bk-moins" aria-label="Remover coxinha de morango">−</button><span class="bk-qte" aria-live="polite">0</span><button class="bk-plus" aria-label="Adicionar coxinha de morango">+</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="bk-card bk-reveal">
+        <div class="bk-card__media"><span class="bk-emoji" aria-hidden="true">🍫</span></div>
+        <div class="bk-card__body">
+          <h3 class="bk-card__nom">Bombom de morango</h3>
+          <div class="bk-card__ligne"><span class="bk-prix">R$ 5,00</span>
+            <div class="bk-stepper" data-id="bombom" data-nome="Bombom de morango" data-preco="5"><button class="bk-moins" aria-label="Remover bombom de morango">−</button><span class="bk-qte" aria-live="polite">0</span><button class="bk-plus" aria-label="Adicionar bombom de morango">+</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="bk-card bk-reveal">
+        <div class="bk-card__media"><img src="img/brownie-borboleta-400.webp" srcset="img/brownie-borboleta-400.webp 400w, img/brownie-borboleta-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
+        <div class="bk-card__body">
+          <h3 class="bk-card__nom">Mini brownie recheado</h3>
+          <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span>
+            <div class="bk-stepper" data-id="minibrownie" data-nome="Mini brownie recheado" data-preco="4.5"><button class="bk-moins" aria-label="Remover mini brownie">−</button><span class="bk-qte" aria-live="polite">0</span><button class="bk-plus" aria-label="Adicionar mini brownie">+</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="bk-card bk-reveal">
+        <div class="bk-card__media"><img src="img/brig-ninho-nutella-400.webp" srcset="img/brig-ninho-nutella-400.webp 400w, img/brig-ninho-nutella-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
+        <div class="bk-card__body">
+          <h3 class="bk-card__nom">Ninho com Nutella</h3>
+          <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span>
+            <div class="bk-stepper" data-id="ninhonutella" data-nome="Ninho com Nutella" data-preco="4.5"><button class="bk-moins" aria-label="Remover ninho com nutella">−</button><span class="bk-qte" aria-live="polite">0</span><button class="bk-plus" aria-label="Adicionar ninho com nutella">+</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="bk-card bk-reveal">
+        <div class="bk-card__media"><span class="bk-emoji" aria-hidden="true">🍬</span></div>
+        <div class="bk-card__body">
+          <h3 class="bk-card__nom">Brigadeiro ao Leite</h3>
+          <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span>
+            <div class="bk-stepper" data-id="aoleite" data-nome="Brigadeiro ao Leite" data-preco="4.5"><button class="bk-moins" aria-label="Remover brigadeiro ao leite">−</button><span class="bk-qte" aria-live="polite">0</span><button class="bk-plus" aria-label="Adicionar brigadeiro ao leite">+</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="bk-card bk-reveal">
+        <div class="bk-card__media"><span class="bk-emoji" aria-hidden="true">🍮</span></div>
+        <div class="bk-card__body">
+          <h3 class="bk-card__nom">Doce de Leite</h3>
+          <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span>
+            <div class="bk-stepper" data-id="docedeleite" data-nome="Doce de Leite" data-preco="4.5"><button class="bk-moins" aria-label="Remover doce de leite">−</button><span class="bk-qte" aria-live="polite">0</span><button class="bk-plus" aria-label="Adicionar doce de leite">+</button></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="bk-card">
-      <div class="bk-card__media"><span class="bk-emoji" aria-hidden="true">🍫</span></div>
-      <div class="bk-card__body">
-        <h3 class="bk-card__nom">Bombom de morango</h3>
-        <div class="bk-card__ligne"><span class="bk-prix">R$ 5,00</span><button class="bk-plus" aria-label="Adicionar bombom de morango">+</button></div>
-      </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como" data-spy>
+    <div class="bk-secao">
+      <h2>Como funciona</h2>
     </div>
-    <div class="bk-card">
-      <div class="bk-card__media"><img src="img/brownie-borboleta-400.webp" srcset="img/brownie-borboleta-400.webp 400w, img/brownie-borboleta-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
-      <div class="bk-card__body">
-        <h3 class="bk-card__nom">Mini brownie recheado</h3>
-        <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span><button class="bk-plus" aria-label="Adicionar mini brownie">+</button></div>
-      </div>
+    <ol class="bk-steps">
+      <li><div><strong>Monte seu pedido</strong><span>Escolha até 4 sabores por cento e os adicionais.</span></div></li>
+      <li><div><strong>Envie no WhatsApp</strong><span>A mensagem já vai pronta. Informe a data do evento.</span></div></li>
+      <li><div><strong>Garanta com 50% de sinal</strong><span>Pedidos com no mínimo 7 dias de antecedência.</span></div></li>
+    </ol>
+    <ul class="bk-regles">
+      <li>💳 Pix · Débito · Crédito (+5%) · Dinheiro</li>
+      <li>🎉 Mínimo de 20 unidades para eventos</li>
+      <li>🫙 Forminhas em acrílico transparente</li>
+    </ul>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+  <section id="avaliacoes" data-spy>
+    <div class="bk-secao">
+      <h2>O que dizem nossos clientes</h2>
     </div>
-    <div class="bk-card">
-      <div class="bk-card__media"><img src="img/brig-ninho-nutella-400.webp" srcset="img/brig-ninho-nutella-400.webp 400w, img/brig-ninho-nutella-800.webp 800w" sizes="(min-width: 768px) 340px, 50vw" alt="" width="400" height="360" loading="lazy" decoding="async"></div>
-      <div class="bk-card__body">
-        <h3 class="bk-card__nom">Ninho com Nutella</h3>
-        <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span><button class="bk-plus" aria-label="Adicionar ninho com nutella">+</button></div>
-      </div>
+    <div class="bk-avis" tabindex="0" aria-label="Avaliações, role para o lado">
+      <figure>
+        <span class="bk-etoiles" aria-label="5 estrelas">★★★★★</span>
+        <blockquote>"Top os doces em!! Tá de parabéns!! Superou as expectativas, muito showww!!"</blockquote>
+        <figcaption>@matheus_teteh · via WhatsApp</figcaption>
+      </figure>
+      <figure>
+        <span class="bk-etoiles" aria-label="5 estrelas">★★★★★</span>
+        <blockquote>"Não deu tempo nem de tirar foto, simplesmente maravilhoso. Minha vó amou!"</blockquote>
+        <figcaption>Cliente · Kit degustação</figcaption>
+      </figure>
+      <figure>
+        <span class="bk-etoiles" aria-label="5 estrelas">★★★★★</span>
+        <blockquote>"Brigadeiros incríveis! Encomendei para o aniversário da minha filha e todos amaram."</blockquote>
+        <figcaption>Ana · via Instagram</figcaption>
+      </figure>
     </div>
-  </div>
+
+    <div class="bk-sobre">
+      <img src="img/gabi-480.webp" alt="Gabi Kaoana, confeiteira" width="96" height="96" loading="lazy" decoding="async">
+      <p><strong>Oi, eu sou a Gabi 💜</strong><br>Mãe, empreendedora e apaixonada por confeitaria. Cada doce é feito à mão, com ingredientes selecionados.</p>
+    </div>
+  </section>
 </main>
 
 <!-- RODAPÉ ESCURO -->
@@ -129,12 +233,46 @@
   <small>© 2026 Gabi Kaoana · Curitiba, PR</small>
 </footer>
 
-<!-- BARRA FIXA DE PEDIDO -->
+<!-- BARRA DE PEDIDO: vazia = WhatsApp direto, com itens = ver pedido -->
 <div class="bk-orderbar">
-  <a class="bk-cta" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site e quero fazer um pedido 😊" target="_blank" rel="noopener">Fazer pedido pelo WhatsApp</a>
+  <a class="bk-cta" id="bk-wa" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site e quero fazer um pedido 😊" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+  <button class="bk-cta" id="bk-ver" type="button" hidden style="border:0;cursor:pointer">
+    <span class="bk-compteur" id="bk-compteur">0</span>
+    <span>Ver meu pedido · <span id="bk-total-barra">R$ 0</span></span>
+  </button>
 </div>
 
-<!-- MENU LATERAL (DRAWER) -->
+<!-- AVISO "ADICIONADO" (lido pelo leitor de tela) -->
+<div class="bk-toast" id="bk-toast" role="status" aria-live="polite"></div>
+
+<!-- PAINEL DE ESCOLHA (categoria) -->
+<dialog class="bk-sheet" id="bk-sheet" aria-labelledby="bk-sheet-titulo">
+  <form method="dialog">
+    <button class="bk-close" aria-label="Fechar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </form>
+  <img class="bk-sheet__img" id="bk-sheet-img" src="" alt="" width="800" height="450">
+  <div class="bk-sheet__corps" id="bk-sheet-corpo"></div>
+</dialog>
+
+<!-- PAINEL DO PEDIDO -->
+<dialog class="bk-sheet" id="bk-panier" aria-labelledby="bk-panier-titulo">
+  <form method="dialog">
+    <button class="bk-close" aria-label="Fechar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </form>
+  <div class="bk-sheet__corps">
+    <h2 class="bk-sheet__titre" id="bk-panier-titulo">Seu pedido</h2>
+    <ul class="bk-panier" id="bk-panier-lista"></ul>
+    <div class="bk-total"><span>Total estimado</span><span id="bk-total-panier">R$ 0</span></div>
+    <p class="bk-sheet__aide">A Gabi confirma disponibilidade, data e valor final pelo WhatsApp.</p>
+    <a class="bk-cta" id="bk-enviar" href="#" target="_blank" rel="noopener">Enviar pedido no WhatsApp</a>
+  </div>
+</dialog>
+
+<!-- MENU LATERAL (DRAWER, só mobile) -->
 <div class="bk-drawer" id="bk-drawer" aria-hidden="true">
   <div class="bk-drawer-top">
     <button class="bk-close" aria-label="Fechar menu">
@@ -146,7 +284,7 @@
 
   <div class="bk-promo">
     <div class="bk-promo__titre">Encomende com 7 dias de antecedência e garanta seu evento 💜</div>
-    <a class="bk-cta" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site 😊" target="_blank" rel="noopener">Pedir agora</a>
+    <a class="bk-cta" href="#cardapio">Montar meu pedido</a>
   </div>
 
   <a class="bk-item" href="#cardapio">
@@ -154,12 +292,12 @@
     <span>Cardápio</span>›
   </a>
   <div class="bk-sep"></div>
-  <a class="bk-item" href="#adicionais">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>
-    <span>Adicionais</span>›
+  <a class="bk-item" href="#como">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg>
+    <span>Como funciona</span>›
   </a>
   <div class="bk-sep"></div>
-  <a class="bk-item" href="index.html#depoimentos">
+  <a class="bk-item" href="#avaliacoes">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>
     <span>Avaliações</span>›
   </a>
@@ -171,30 +309,217 @@
 </div>
 
 <script>
-  // Abre/fecha o drawer
-  const drawer = document.getElementById('bk-drawer');
-  const burger = document.querySelector('.bk-burger');
-  function setDrawer(aberto) {
-    drawer.classList.toggle('is-open', aberto);
-    document.body.classList.toggle('bk-lock', aberto);
-    drawer.setAttribute('aria-hidden', String(!aberto));
-    burger.setAttribute('aria-expanded', String(aberto));
-    // Focus : entre dans le menu à l'ouverture, revient au burger à la fermeture
-    if (aberto) drawer.querySelector('.bk-close').focus();
-    else burger.focus();
-  }
-  // Garde le focus clavier piégé dans le menu ouvert
-  drawer.addEventListener('keydown', e => {
-    if (e.key !== 'Tab') return;
-    const f = drawer.querySelectorAll('a, button');
-    const premier = f[0], dernier = f[f.length - 1];
-    if (e.shiftKey && document.activeElement === premier) { e.preventDefault(); dernier.focus(); }
-    else if (!e.shiftKey && document.activeElement === dernier) { e.preventDefault(); premier.focus(); }
+/* ===== Données du menu ===== */
+const WHATS = '5541997529779';
+const CATEGORIAS = {
+  tradicionais: { nome: 'Brigadeiros Tradicionais', tipo: 'cento', preco: 220, img: 'brig-tradicional-taca',
+    sabores: ['Brigadeiro ao leite', 'Beijinho', 'Leite ninho', 'Dois amores', 'Bicho de pé'] },
+  especiais: { nome: 'Brigadeiros Especiais', tipo: 'cento', preco: 290, img: 'brig-ninho-perolas',
+    sabores: ['Leite ninho com nutella', 'Surpresa de uva', 'Oreo', 'Café', 'Confete', 'Stikadinho', 'Temáticos (coloridos)', 'Churros'] },
+  gourmet: { nome: 'Brigadeiros Gourmet', tipo: 'cento', preco: 380, img: 'brig-tematicos-safari',
+    sabores: ['Ferrero Rocher', 'Brigadeiro belga ao leite', 'Kinder Bueno', 'Rafaello', 'Laka Oreo', 'DARK (meio amargo)', 'Queijo e goiabada', 'Floresta negra'] },
+  brownies: { nome: 'Brownie para Festa', tipo: 'unidade', preco: 4.5, img: 'brownie-borboleta',
+    texto: '3x3cm, confeitados. Perfeito para lembrancinhas.' },
+  pipoca: { nome: 'Pipoca Gourmet Personalizada', tipo: 'consulta', img: 'pipoca-personalizada-1',
+    texto: 'Saquinhos personalizados com o tema da sua festa.' },
+  kits: { nome: 'Kits Presenteáveis', tipo: 'consulta', img: 'kit-coracao',
+    texto: 'Caixas montadas para presentear quem você ama.' }
+};
+const MAX_SABORES = 4;
+const PASSO = 10; // unités ajoutées par toucher (à confirmer avec Gabi)
+
+const esc = t => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const brl = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const $ = s => document.querySelector(s);
+const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ===== Panier (mémorisé dans le navigateur, sans garantie) ===== */
+let panier = [];
+try { panier = JSON.parse(localStorage.getItem('gk-panier')) || []; } catch (e) { panier = []; }
+function salvar() { try { localStorage.setItem('gk-panier', JSON.stringify(panier)); } catch (e) {} }
+
+function total() { return panier.reduce((s, i) => s + i.preco * i.qtd, 0); }
+function nbItens() { return panier.reduce((s, i) => s + (i.tipo === 'cento' ? i.qtd : 1), 0); }
+
+function mensagem() {
+  const linhas = panier.map(i => i.tipo === 'cento'
+    ? `• ${i.qtd} cento ${i.nome} (${i.sabores.join(', ')}) — ${brl(i.preco * i.qtd)}`
+    : `• ${i.qtd} un. ${i.nome} — ${brl(i.preco * i.qtd)}`);
+  return `Olá Gabi! Vim pelo site e quero fazer um pedido:\n\n${linhas.join('\n')}\n\nTotal estimado: ${brl(total())}\nData do evento: `;
+}
+
+function atualizar(bump) {
+  const tem = panier.length > 0;
+  $('.bk-orderbar').classList.toggle('has-items', tem);
+  $('#bk-wa').hidden = tem;
+  $('#bk-ver').hidden = !tem;
+  const c = $('#bk-compteur');
+  c.textContent = nbItens();
+  $('#bk-total-barra').textContent = brl(total());
+  if (bump && !reduit) { c.classList.remove('is-bump'); void c.offsetWidth; c.classList.add('is-bump'); }
+  // Synchronise les sélecteurs de quantité
+  document.querySelectorAll('.bk-stepper').forEach(st => {
+    const item = panier.find(i => i.id === st.dataset.id);
+    const q = item ? item.qtd : 0;
+    st.querySelector('.bk-qte').textContent = q;
+    st.classList.toggle('has-qte', q > 0);
   });
-  burger.addEventListener('click', () => setDrawer(true));
-  document.querySelector('.bk-close').addEventListener('click', () => setDrawer(false));
-  drawer.querySelectorAll('.bk-item').forEach(a => a.addEventListener('click', () => setDrawer(false)));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) setDrawer(false); });
+  salvar();
+}
+
+let toastTimer;
+function toast(txt) {
+  const t = $('#bk-toast');
+  t.textContent = txt;
+  t.classList.add('is-on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('is-on'), 1800);
+}
+
+function ajouterUnite(id, nome, preco, delta) {
+  let item = panier.find(i => i.id === id);
+  if (!item) { item = { id, nome, preco, qtd: 0, tipo: 'unidade' }; panier.push(item); }
+  item.qtd = Math.max(0, item.qtd + delta);
+  if (item.qtd === 0) panier = panier.filter(i => i !== item);
+  atualizar(delta > 0);
+  if (delta > 0) toast(`${nome} · ${item.qtd} un. ✓`);
+}
+
+/* ===== Steppers des adicionais ===== */
+document.querySelectorAll('.bk-stepper').forEach(st => {
+  const { id, nome, preco } = st.dataset;
+  st.querySelector('.bk-plus').addEventListener('click', () => ajouterUnite(id, nome, +preco, PASSO));
+  st.querySelector('.bk-moins').addEventListener('click', () => ajouterUnite(id, nome, +preco, -PASSO));
+});
+
+/* ===== Dialogs : verrou du scroll + clic sur le fond ferme ===== */
+document.querySelectorAll('dialog').forEach(d => {
+  d.addEventListener('close', () => document.body.classList.remove('bk-lock'));
+  d.addEventListener('click', e => { if (e.target === d) d.close(); });
+});
+function abrir(d) { d.showModal(); document.body.classList.add('bk-lock'); }
+
+/* ===== Sheet catégorie ===== */
+const sheet = $('#bk-sheet');
+document.querySelectorAll('[data-cat]').forEach(btn => btn.addEventListener('click', () => {
+  const cat = CATEGORIAS[btn.dataset.cat];
+  const img = $('#bk-sheet-img');
+  img.src = `img/${cat.img}-800.webp`;
+  const corpo = $('#bk-sheet-corpo');
+
+  if (cat.tipo === 'cento') {
+    corpo.innerHTML = `
+      <h2 class="bk-sheet__titre" id="bk-sheet-titulo">${cat.nome}</h2>
+      <p class="bk-sheet__aide">${brl(cat.preco)} o cento · <span id="bk-cont">0/${MAX_SABORES}</span> sabores escolhidos</p>
+      <fieldset class="bk-saveurs"><legend>Escolha até ${MAX_SABORES} sabores</legend>
+        ${cat.sabores.map(s => `<label class="bk-chip"><input type="checkbox" value="${s}"><span>${s}</span></label>`).join('')}
+      </fieldset>
+      <button class="bk-cta" id="bk-add-cento" disabled>Adicionar 1 cento · ${brl(cat.preco)}</button>`;
+    const caixas = corpo.querySelectorAll('input');
+    const add = corpo.querySelector('#bk-add-cento');
+    corpo.querySelector('.bk-saveurs').addEventListener('change', () => {
+      const marcados = [...caixas].filter(c => c.checked);
+      caixas.forEach(c => { c.disabled = !c.checked && marcados.length >= MAX_SABORES; });
+      corpo.querySelector('#bk-cont').textContent = `${marcados.length}/${MAX_SABORES}`;
+      add.disabled = marcados.length === 0;
+    });
+    add.addEventListener('click', () => {
+      const sabores = [...caixas].filter(c => c.checked).map(c => c.value);
+      panier.push({ id: btn.dataset.cat + '-' + Date.now(), nome: cat.nome.replace('Brigadeiros ', ''), preco: cat.preco, qtd: 1, tipo: 'cento', sabores });
+      atualizar(true);
+      sheet.close();
+      toast('1 cento adicionado ✓');
+    });
+  } else if (cat.tipo === 'unidade') {
+    corpo.innerHTML = `
+      <h2 class="bk-sheet__titre" id="bk-sheet-titulo">${cat.nome}</h2>
+      <p class="bk-sheet__aide">${cat.texto}<br>${brl(cat.preco)} a unidade</p>
+      <button class="bk-cta" id="bk-add-un">Adicionar ${PASSO} unidades · ${brl(cat.preco * PASSO)}</button>`;
+    corpo.querySelector('#bk-add-un').addEventListener('click', () => {
+      ajouterUnite(btn.dataset.cat, cat.nome, cat.preco, PASSO);
+      sheet.close();
+    });
+  } else {
+    const txt = encodeURIComponent(`Olá Gabi! Vim pelo site e queria um orçamento de: ${cat.nome}`);
+    corpo.innerHTML = `
+      <h2 class="bk-sheet__titre" id="bk-sheet-titulo">${cat.nome}</h2>
+      <p class="bk-sheet__aide">${cat.texto}<br>Valor sob consulta, depende do tema e da quantidade.</p>
+      <a class="bk-cta" href="https://wa.me/${WHATS}?text=${txt}" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>`;
+  }
+  abrir(sheet);
+}));
+
+/* ===== Sheet panier ===== */
+const pan = $('#bk-panier');
+function desenharPanier() {
+  $('#bk-panier-lista').innerHTML = panier.map((i, n) => `
+    <li><div>${i.tipo === 'cento' ? `1 cento ${esc(i.nome)}<small>${esc(i.sabores.join(', '))}</small>` : `${+i.qtd} un. ${esc(i.nome)}`}
+      <small>${brl(i.preco * i.qtd)}</small></div>
+      <button class="bk-retirer" data-n="${n}" aria-label="Remover ${esc(i.nome)}">Remover</button></li>`).join('');
+  $('#bk-total-panier').textContent = brl(total());
+  $('#bk-enviar').href = `https://wa.me/${WHATS}?text=${encodeURIComponent(mensagem())}`;
+}
+$('#bk-ver').addEventListener('click', () => { desenharPanier(); abrir(pan); });
+$('#bk-panier-lista').addEventListener('click', e => {
+  const b = e.target.closest('.bk-retirer');
+  if (!b) return;
+  panier.splice(+b.dataset.n, 1);
+  atualizar(false);
+  if (panier.length) desenharPanier(); else pan.close();
+});
+
+/* ===== Onglets : indicateur qui glisse + suivi du scroll ===== */
+const tabs = $('.bk-tabs');
+const ind = $('.bk-tabs__ind');
+tabs.classList.add('has-ind');
+function ativar(tab) {
+  tabs.querySelectorAll('.bk-tab').forEach(t => { t.classList.toggle('is-active', t === tab); t.toggleAttribute('aria-current', t === tab); });
+  ind.style.width = tab.offsetWidth + 'px';
+  ind.style.transform = `translateX(${tab.offsetLeft}px)`;
+  tabs.scrollTo({ left: tab.offsetLeft - 16, behavior: reduit ? 'auto' : 'smooth' });
+}
+ativar(tabs.querySelector('.bk-tab'));
+addEventListener('resize', () => ativar(tabs.querySelector('.bk-tab.is-active')));
+const spy = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) {
+    const t = tabs.querySelector(`.bk-tab[href="#${e.target.id}"]`);
+    if (t) ativar(t);
+  }
+}), { rootMargin: '-140px 0px -55% 0px' });
+document.querySelectorAll('[data-spy]').forEach(s => spy.observe(s));
+
+/* ===== Apparition des cartes (une fois) ===== */
+const revelar = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('is-visible'); revelar.unobserve(e.target); }
+}), { rootMargin: '0px 0px -10% 0px' });
+document.querySelectorAll('.bk-grid').forEach(g => [...g.children].forEach((c, i) => { c.style.setProperty('--i', i % 3); revelar.observe(c); }));
+
+/* ===== Drawer (mobile) ===== */
+const drawer = $('#bk-drawer');
+const burger = $('.bk-burger');
+function setDrawer(aberto) {
+  drawer.classList.toggle('is-open', aberto);
+  document.body.classList.toggle('bk-lock', aberto);
+  drawer.setAttribute('aria-hidden', String(!aberto));
+  burger.setAttribute('aria-expanded', String(aberto));
+  // Focus : entre dans le menu à l'ouverture, revient au burger à la fermeture
+  if (aberto) drawer.querySelector('.bk-close').focus();
+  else burger.focus();
+}
+burger.addEventListener('click', () => setDrawer(true));
+drawer.querySelector('.bk-close').addEventListener('click', () => setDrawer(false));
+drawer.querySelectorAll('.bk-item, .bk-promo .bk-cta').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+// Garde le focus clavier piégé dans le menu ouvert
+drawer.addEventListener('keydown', e => {
+  if (e.key !== 'Tab') return;
+  const f = drawer.querySelectorAll('a, button');
+  const premier = f[0], dernier = f[f.length - 1];
+  if (e.shiftKey && document.activeElement === premier) { e.preventDefault(); dernier.focus(); }
+  else if (!e.shiftKey && document.activeElement === dernier) { e.preventDefault(); premier.focus(); }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) setDrawer(false); });
+
+atualizar(false);
 </script>
 </body>
 </html>
