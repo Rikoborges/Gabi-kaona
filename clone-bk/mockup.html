@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabi Kaoana | Mockup layout BK</title>
+  <!-- MOCKUP DE TESTE: não indexar no Google -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="../assets/images/favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="bk.css">
+  <style>
+    /* Ajustes só do mockup */
+    .bk-root { background: var(--bk-bg); padding-bottom: 96px; } /* espaço pra barra fixa do WhatsApp */
+    .bk-secao { max-width: 1100px; margin: 24px auto 0; padding: 0 16px; }
+    .bk-secao h2 { font-family: var(--bk-titre); font-size: 26px; color: var(--bk-texte); }
+    .bk-secao p { color: var(--bk-doux); font-size: 15px; }
+    .bk-emoji { display: flex; align-items: center; justify-content: center; height: 100%; font-size: 48px; }
+    .bk-drawer-top { display: flex; justify-content: space-between; align-items: center; }
+  </style>
+</head>
+<body class="bk-root">
+
+<!-- HEADER: burger | logo | CTA -->
+<header class="bk-header">
+  <button class="bk-burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="bk-drawer">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+  <a class="bk-logo" href="index.html" aria-label="Gabi Kaoana, início">GK</a>
+  <a class="bk-cta" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site 😊" target="_blank" rel="noopener">Pedir</a>
+</header>
+
+<!-- ABAS -->
+<nav class="bk-tabs" aria-label="Categorias">
+  <a class="bk-tab is-active" href="#cardapio">Cardápio</a>
+  <a class="bk-tab" href="#adicionais">Adicionais</a>
+  <a class="bk-tab" href="#cardapio">Tradicionais</a>
+  <a class="bk-tab" href="#cardapio">Especiais</a>
+  <a class="bk-tab" href="#cardapio">Gourmet</a>
+  <a class="bk-tab" href="#cardapio">Brownies</a>
+  <a class="bk-tab" href="#cardapio">Pipoca</a>
+</nav>
+
+<main>
+  <!-- GRADE DE CATEGORIAS -->
+  <div class="bk-secao" id="cardapio">
+    <h2>Cardápio</h2>
+    <p>Escolha a categoria e monte o seu pedido</p>
+  </div>
+  <div class="bk-grid">
+    <a class="bk-card" href="#">
+      <div class="bk-card__media"><img src="../assets/images/brig-tradicional-taca.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__label">Tradicionais</div>
+    </a>
+    <a class="bk-card" href="#">
+      <div class="bk-card__media"><img src="../assets/images/brig-ninho-perolas.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__label">Especiais</div>
+    </a>
+    <a class="bk-card" href="#">
+      <div class="bk-card__media"><img src="../assets/images/brig-tematicos-safari.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__label">Gourmet</div>
+    </a>
+    <a class="bk-card" href="#">
+      <div class="bk-card__media"><img src="../assets/images/brownie-borboleta.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__label">Brownies</div>
+    </a>
+    <a class="bk-card" href="#">
+      <div class="bk-card__media"><img src="../assets/images/pipoca-personalizada-1.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__label">Pipoca</div>
+    </a>
+    <a class="bk-card" href="#">
+      <div class="bk-card__media"><img src="../assets/images/kit-coracao.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__label">Kits</div>
+    </a>
+  </div>
+
+  <!-- CARDS DE PRODUTO (nome + preço + botão +) -->
+  <div class="bk-secao" id="adicionais">
+    <h2>Adicionais</h2>
+    <p>Para complementar seu pedido</p>
+  </div>
+  <div class="bk-grid">
+    <div class="bk-card">
+      <div class="bk-card__media"><span class="bk-emoji" aria-hidden="true">🍓</span></div>
+      <div class="bk-card__body">
+        <h3 class="bk-card__nom">Coxinha de morango</h3>
+        <div class="bk-card__ligne"><span class="bk-prix">R$ 5,00</span><button class="bk-plus" aria-label="Adicionar coxinha de morango">+</button></div>
+      </div>
+    </div>
+    <div class="bk-card">
+      <div class="bk-card__media"><span class="bk-emoji" aria-hidden="true">🍫</span></div>
+      <div class="bk-card__body">
+        <h3 class="bk-card__nom">Bombom de morango</h3>
+        <div class="bk-card__ligne"><span class="bk-prix">R$ 5,00</span><button class="bk-plus" aria-label="Adicionar bombom de morango">+</button></div>
+      </div>
+    </div>
+    <div class="bk-card">
+      <div class="bk-card__media"><img src="../assets/images/brownie-borboleta.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__body">
+        <h3 class="bk-card__nom">Mini brownie recheado</h3>
+        <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span><button class="bk-plus" aria-label="Adicionar mini brownie">+</button></div>
+      </div>
+    </div>
+    <div class="bk-card">
+      <div class="bk-card__media"><img src="../assets/images/brig-ninho-nutella.webp" alt="" width="400" height="360"></div>
+      <div class="bk-card__body">
+        <h3 class="bk-card__nom">Ninho com Nutella</h3>
+        <div class="bk-card__ligne"><span class="bk-prix">R$ 4,50</span><button class="bk-plus" aria-label="Adicionar ninho com nutella">+</button></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- RODAPÉ ESCURO -->
+<footer class="bk-footer">
+  <div class="bk-social">
+    <a href="https://instagram.com/gabikaoana_" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+    </a>
+    <a href="https://wa.me/5541997529779" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 1-13.4 7.9L3 21l1.2-4.4A9 9 0 1 1 21 12z"/></svg>
+    </a>
+  </div>
+  <a href="../politica-privacidade.html">Política de Privacidade</a>
+  <small>© 2026 Gabi Kaoana · Curitiba, PR</small>
+</footer>
+
+<!-- BARRA FIXA DE PEDIDO -->
+<div class="bk-orderbar">
+  <a class="bk-cta" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site e quero fazer um pedido 😊" target="_blank" rel="noopener">Fazer pedido pelo WhatsApp</a>
+</div>
+
+<!-- MENU LATERAL (DRAWER) -->
+<div class="bk-drawer" id="bk-drawer" aria-hidden="true">
+  <div class="bk-drawer-top">
+    <button class="bk-close" aria-label="Fechar menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <a class="bk-logo" href="index.html" aria-label="Gabi Kaoana, início">GK</a>
+    <span style="width:44px"></span>
+  </div>
+
+  <div class="bk-promo">
+    <div class="bk-promo__titre">Encomende com 7 dias de antecedência e garanta seu evento 💜</div>
+    <a class="bk-cta" href="https://wa.me/5541997529779?text=Olá Gabi! Vim pelo site 😊" target="_blank" rel="noopener">Pedir agora</a>
+  </div>
+
+  <a class="bk-item" href="#cardapio">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+    <span>Cardápio</span>›
+  </a>
+  <div class="bk-sep"></div>
+  <a class="bk-item" href="#adicionais">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>
+    <span>Adicionais</span>›
+  </a>
+  <div class="bk-sep"></div>
+  <a class="bk-item" href="index.html#depoimentos">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>
+    <span>Avaliações</span>›
+  </a>
+  <div class="bk-sep"></div>
+  <a class="bk-item" href="../blog/index.html">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>
+    <span>Blog</span>›
+  </a>
+</div>
+
+<script>
+  // Abre/fecha o drawer
+  const drawer = document.getElementById('bk-drawer');
+  const burger = document.querySelector('.bk-burger');
+  function setDrawer(aberto) {
+    drawer.classList.toggle('is-open', aberto);
+    document.body.classList.toggle('bk-lock', aberto);
+    drawer.setAttribute('aria-hidden', String(!aberto));
+    burger.setAttribute('aria-expanded', String(aberto));
+  }
+  burger.addEventListener('click', () => setDrawer(true));
+  document.querySelector('.bk-close').addEventListener('click', () => setDrawer(false));
+  drawer.querySelectorAll('.bk-item').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setDrawer(false); });
+</script>
+</body>
+</html>

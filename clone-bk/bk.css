@@ -243,6 +243,7 @@ body.bk-lock { overflow: hidden; }
 }
 .bk-orderbar .bk-cta {
   display: flex;
+  width: 100%; /* sans ça le bouton reste collé à droite */
   justify-content: center;
   min-height: 56px;
   border-radius: 16px;
